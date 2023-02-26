@@ -1,5 +1,4 @@
 import "./App.css";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 export const App = () => {
@@ -11,14 +10,14 @@ export const App = () => {
   }, [load]);
 
   const fetchQuote = () => {
-    axios
-      .get("https://api.adviceslip.com/advice")
-      .then((response) => {
-        const { advice } = response.data.slip;
+    fetch("https://api.adviceslip.com/advice")
+      .then((response) => response.json())
+      .then((data) => {
+        const { advice } = data.slip;
         setQuote(advice);
       })
-      .catch((error) => {
-        alert(error);
+      .catch((err) => {
+        alert(err);
       });
   };
   return (
