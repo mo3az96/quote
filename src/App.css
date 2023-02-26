@@ -35,7 +35,7 @@ body {
 .heading {
   display: flex;
   align-items: center;
-  height: 150px;
+  min-height: 150px;
   margin-top: 0;
 }
 
@@ -111,6 +111,6 @@ body {
 @media only screen and (max-width: 600px) {
   .card {
     width: 80%;
-    height: 30%;
+    padding: 30px 15px;
   }
 }
